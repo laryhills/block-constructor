@@ -70,5 +70,6 @@ fs.readFile("mempool.csv", "utf8", (err: any, data: string) => {
   const transactions = processCSVToTxns(data);
   const { blockTxns, blockTotalFees } = minerSelectionProcess(transactions);
 
+  console.log("Total Blocks: ", blockTxns.length, "\n");
   console.log("Block Transactions\n", blockTxns.join("\n"));
 });
